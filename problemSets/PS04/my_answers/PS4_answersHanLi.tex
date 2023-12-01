@@ -99,9 +99,8 @@ help(Prestige)
 	\item [(a)]
 	Create a new variable \texttt{professional} by recoding the variable \texttt{type} so that professionals are coded as $1$, and blue and white collar workers are coded as $0$ (Hint: \texttt{ifelse}).
 	
-\lstinputlisting[language=R, firstline=25, lastline=34]{PS4.R}  
-	
-	
+\lstinputlisting[language=R, firstline=25, lastline=35]{PS4.R}  
+	Note that I further recoded the variable to be a factor to reflect it's categorical data type.
 	\item [(b)]
 	Run a linear model with \texttt{prestige} as an outcome and \texttt{income}, \texttt{professional}, and the interaction of the two as predictors (Note: this is a continuous $\times$ dummy interaction.)
 	\lstinputlisting[language=R, firstline=42, lastline=45]{PS4.R}  
@@ -109,7 +108,7 @@ help(Prestige)
 \newpage
 	\item [(c)]
 	Write the prediction equation based on the result.\\
-	Prestige = 21.142 + 0.003*Income + 37.781l*Professional - 0.002*Income*Professional
+	Prestige = 21.142 + 0.003*Income + 37.781*Professional - 0.002*Income*Professional
 	
 
 	\item [(d)]

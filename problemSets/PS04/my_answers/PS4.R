@@ -32,6 +32,7 @@ data("Prestige")
 #help(Prestige)
 # Recode the 'type' variable to create 'professional'
 Prestige$professional <- ifelse(Prestige$type == "prof", 1, 0)
+Prestige$professional <- as.factor(Prestige$professional)
 View(Prestige)
 #note that there are 4 out of 102 variables that are missing type hence NA in professional
 #as the number of missing value is relatively small, I will drop them as they shouldn't have much difference in model result
@@ -47,11 +48,11 @@ stargazer(model)
 coef_model <- coef(model)
 
 # Calculate effect of $1,000 increase for professionals
-effect_increase <- coef_model["income"] + coef_model["income:professional"]
+effect_increase <- coef_model["income"] + coef_model["income:professional1"]
 marginal_1000_income <-effect_increase * 1000  # since the increase is $1000
 
 # Calculate the effect of changing to professional at $6,000 income
-change_effect <- coef_model["professional"] + coef_model["income:professional"] * 6000
+change_effect <- coef_model["professional1"] + coef_model["income:professional1"] * 6000
 change_effect
 
 #q2
